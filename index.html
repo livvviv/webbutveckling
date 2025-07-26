@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-default.min.css"
+        rel="stylesheet">
+    <title>Little Stitches Store ୨ৎ</title>
+</head>
+
+<body>
+    <div class="wrapper"> <!--grid-container-->
+        <!--HEADER-->
+        <header>
+            <div class="logo-section">
+                <h1>Welcome to</h1>
+                <div class="img-container">
+                    <img class="logo-img" src="imgs/logopinkred2.png" alt="Store logo">
+                </div>
+                <p class="slogan">crafted with care</p>
+            </div>
+            <div class="nav-links">
+                <div class="nav-img">
+                    <a href="#"> <img class="insta-img" src="imgs/instalogoyellow.svg" alt="Instagram logo"></a>
+                </div>
+                <nav class="navigations">
+                    <a href="index.html">Home</a>
+                    <div class="dropdown"> <!--dropdown nav-->
+                        <button>Shop <i class="arrow"></i></button>
+                        <div class="content">
+                            <a href="#">New in</a>
+                            <a href="#">Products</a>
+                            <a href="#">Custom order</a>
+                        </div>
+                    </div>
+                    <a href="#">About</a>
+                </nav>
+                <div class="nav-img">
+                    <a href="#"> <img class="profile-img" src="imgs/profilelogoyellow.svg" alt="Profile logo"></a>
+                    <a href="#"> <img class="cart-img" src="imgs/cartlogoyellow.svg" alt="Shopping cart logo"></a>
+                </div>
+            </div>
+        </header>
+
+        <!--MAIN-->
+        <main class="home">
+            <section class="new-in">
+                <h2>New in blind boxes!</h2>
+                <div class="img-row">
+                    <article>
+                        <div class="img-container cats-container">
+                            <a href="cats-product-page.html"> <img src="imgs/cats.png" alt="rahh"></a>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="img-container bunnies-container">
+                            <a href="#"> <img src="imgs/bunnies.png" alt="rahh"></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="products">
+                <h2>Products</h2>
+                <div class="img-row">
+                    <div id="products-carousel" class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <article>
+                                        <div class="img-container dog-container">
+                                            <a href="#"><img src="imgs/dog1.png" alt="crochet dog"></a>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="splide__slide">
+                                    <article>
+                                        <div class="img-container accessory-container">
+                                            <a href="#"><img src="imgs/accessorybasket1.png"
+                                                    alt="crochet accessory basket"></a>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="splide__slide">
+                                    <article>
+                                        <div class="img-container cats-container">
+                                            <a href="cats-product-page.html"><img src="imgs/cats.png" alt="cats"></a>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="splide__slide">
+                                    <article>
+                                        <div class="img-container bunnies-container">
+                                            <a href="#"><img src="imgs/bunnies.png" alt="two crochet bunnies"></a>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--FOOTER-->
+        <footer>
+            <div class="decoration">
+                <h2>Thanks for stopping by!</h2>
+                <p>.・。.・゜✭・.・✫・゜・。.✫・゜・</p>
+            </div>
+
+            <section class="menu">
+                <h3>Menu</h3>
+                <ul>
+                    <li> <a href="index.html">Home</a> </li>
+                    <li> <a href="#">Shop (refer to top of page)</a> </li>
+                    <li> <a href="#">About</a> </li>
+                </ul>
+            </section>
+            <section class="help">
+                <h3>Help & information</h3>
+                <ul>
+                    <li> <a href="#">FAQ</a></li>
+                    <li> <a href="#">Policies</a></li>
+                    <li> <a href="#">Terms & conditions</a> </li>
+                    <li> <a href="#">Contact</a></li>
+                </ul>
+            </section>
+            <section class="newsletter">
+                <h3>Join the newsletter for updates and special offers</h3>
+                <div class="newsletter-form">
+                    <input type="text" placeholder="Enter your email">
+                    <a href="#" class="btn">Join</a>
+                </div>
+            </section>
+        </footer>
+    </div>
+
+    <!--splide-->
+    <script>
+        new Splide('.splide', {
+            type: 'loop',
+            easing: 'cubic-bezier(0.2, 0.9, 0.9, 0.8)',
+            gap: '3em',
+            perPage: 3,
+            focus: 0,
+            omitEnd: true,
+            pagination: false,
+            breakpoints: {
+                1190: {
+                    perPage: 2,
+                    gap: '2em',
+                },
+                750: {
+                    perPage: 1,
+                    gap: '1em',
+                },
+            },
+        }).mount();
+    </script>
+</body>
+
+</html>
