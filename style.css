@@ -1,0 +1,370 @@
+/*
+Header och footer är samma på båda htmls
+  */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: rgb(255, 254, 237);
+}
+
+/*för att påverka bakgrundsbildens opacitet*/
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('imgs/gridtransparentred.png');
+  background-size: 350px;
+  background-repeat: repeat;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/*HEADER*/
+header {
+  background: RGB(255, 252, 224);
+  background: linear-gradient(0deg, rgba(255, 252, 224, 1) 24%, rgb(255, 255, 255) 100%);
+  color: rgb(145, 23, 23);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 100%;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+header .logo-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+header .img-container {
+  width: 100%;
+  max-width: 300px;
+}
+
+header img.logo-img{
+  width: 100%;
+  height: auto;
+}
+
+header h1 {
+  margin: 0px 5px 40px 0px;
+  font-size: 30px;
+}
+
+header p.slogan {
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+header .nav-links {
+  background-color: antiquewhite;
+  background-image: url(imgs/plaidred.png);
+  background-size: 340px;
+  border: 1px solid rgb(99, 21, 21);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-links img {
+  width: 40px;
+}
+
+.navigations {
+  display: flex;
+}
+
+.insta-img {
+  margin: 0px 41px;
+}
+
+.profile-img,
+.cart-img {
+  margin: 0px 10px;
+}
+
+nav a,
+.the-product a,
+button {
+  padding: 6px;
+  margin: 0px 40px;
+  background-color: rgb(255, 255, 232);
+  color: rgb(133, 17, 17);
+  width: 80px;
+  text-align: center;
+  border-radius: 45%;
+  border: 2px solid rgb(151, 45, 45);
+}
+nav a:hover,
+.the-product a:hover{
+    color: rgb(209, 55, 55);
+}
+
+button{
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-size: 17px;
+}
+
+.arrow {
+  border: 1px solid rgb(133, 17, 17);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/*dropdown nav*/
+.dropdown a {
+  display: block;
+}
+
+.content a {
+  background-color: rgb(255, 255, 232);
+  border: 1px solid rgb(151, 45, 45);
+  border-radius: 5px;
+  width: auto;
+}
+
+.dropdown .content {
+  display: none;
+  position: absolute;
+  min-width: 100px;
+}
+
+.dropdown:hover .content {
+  display: block;
+}
+
+/*MAIN (båda mains)*/
+main {
+  width: 60%;
+  margin: 40px auto;
+  border-radius: 10px;
+}
+
+main .img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+main .new-in img:hover,
+main .products img:hover {
+  transform: rotate(3deg) scale(1.03);
+}
+
+main h2 {
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: rgb(122, 16, 16);
+  text-align: center;
+}
+
+/*NEW IN (endast main home)*/
+main .new-in .cats-container {
+  max-width: 330px;
+}
+
+main .new-in .bunnies-container {
+  max-width: 460px;
+  align-self: center;
+}
+
+/*NEW IN (endast main home) och PRODUCTS (båda mains)*/
+main .new-in,
+main .products {
+  background-color: rgba(255, 215, 215, 0.4);
+  border: 2px dashed rgb(145, 23, 23);
+  border-radius: 10px;
+  margin: 0px;
+  padding: 40px;
+  padding-bottom: 50px;
+}
+
+main .img-row {
+  display: flex;
+  justify-content: center;
+}
+
+article{
+  display: flex;
+}
+
+main.home .img-container,
+main.cats-product-page .products .img-container {
+  width: 100%;
+  box-shadow: 0px 0px 50px 0px rgb(255, 253, 253);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/*PRODUCTS (påverkar båda mains)*/
+main .products {
+  margin-top: 50px;
+}
+
+/*bildspelet i båda mains*/
+.products .splide__slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*dog img*/
+main .products .dog-container {
+  max-width: 180px;
+}
+
+/*accessory basket img*/
+main .products .accessory-container {
+  max-width: 190px;
+}
+
+/*cats img*/
+main .products .cats-container {
+  max-width: 250px;
+}
+
+/*bunnies img*/
+main .products .bunnies-container {
+  max-width: 320px;
+}
+
+/*FOOTER*/
+footer {
+  background-color: rgb(255, 250, 198);
+  color: rgb(145, 23, 23);
+  font-weight: bold;
+  font-size: 17px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+footer section ul li a {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+footer a {
+  color: rgb(145, 23, 23);
+}
+footer a:hover, footer a.btn:hover{
+  color: rgb(209, 55, 55);
+}
+
+footer h2,
+footer h3 {
+  margin-bottom: 10px;
+}
+
+footer h2 {
+  font-size: 30px;
+}
+
+footer h3 {
+  font-size: 20px;
+}
+
+footer .newsletter-form {
+  display: flex;
+}
+
+footer input {
+  flex: 1;
+  border: 1px solid rgb(145, 23, 23);
+  padding: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+footer input:focus {
+  outline: 1px solid rgb(255, 115, 115);
+}
+
+footer a.btn {
+  background-color: rgb(122, 16, 16);
+  color: white;
+  padding: 3px;
+  font-size: 18px;
+}
+
+/*MAIN till cats.html*/
+section.the-product {
+  background-color: rgba(255, 215, 215, 0.4);
+  border: 2px dashed rgb(145, 23, 23);
+  border-radius: 10px;
+  margin: 0px;
+  color: rgb(145, 23, 23);
+}
+
+.big-cat-img-container { /*för att cats.png ska kunna vara större än resterande cat pngs*/
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.the-product .splide__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.the-product {
+  display: flex;
+  justify-content: space-between;
+}
+
+.the-product .product-img {
+  margin: 20px;
+  flex: 1;
+}
+
+/*för att kattbilderna från olika vinklar ska vara mindre än "cats.png" och passa i bildspelet*/
+.the-product .product-img .img-container {
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.the-product .product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.the-product p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
